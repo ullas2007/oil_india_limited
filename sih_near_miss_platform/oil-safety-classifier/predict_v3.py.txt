@@ -1,0 +1,38 @@
+import joblib
+
+MODEL_PATH = "models/unsafe_act_sif_v3_model.joblib"
+
+print("Loading V3 model...")
+model = joblib.load(MODEL_PATH)
+
+print("OIL Guardian AI - V3 SIF Classifier")
+print("=" * 50)
+
+while True:
+    report = input("\nEnter safety report (or type 'exit'): ").strip()
+
+    if report.lower() == "exit":
+        print("Exiting...")
+        break
+
+    if not report:
+        print("Please enter a report.")
+        continue
+
+    prediction = int(model.predict([report])[0])
+
+    print("\nPrediction:")
+    if prediction == 1:
+        print("SIF POTENTIAL")
+        print("Risk classification: 1")
+    else:
+        print("NON-SIF")
+        print("Risk classification: 0")
+
+    # Probability if supported by the model
+    try:
+        probabilities = model.predict_proba([report])[0]
+        print(f"Non-SIF probability: {probabilities[0] * 100:.2f}%")
+        print(f"SIF probability:     {probabilities[1] * 100:.2f}%")
+    except Exception:
+        pass

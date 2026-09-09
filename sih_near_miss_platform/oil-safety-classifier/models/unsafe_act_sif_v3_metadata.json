@@ -1,0 +1,52 @@
+{
+  "model_version": "V3",
+  "task": "SIF binary classification",
+  "target_column": "sif_binary",
+  "label_mapping": {
+    "0": "Non-SIF",
+    "1": "SIF"
+  },
+  "dataset": "unsafe_act_v3_contrast_balanced.csv",
+  "total_clean_samples": 3443,
+  "training_samples": 2754,
+  "test_samples": 689,
+  "random_state": 42,
+  "test_size": 0.2,
+  "feature_type": "word TF-IDF + character TF-IDF",
+  "word_ngram_range": [
+    1,
+    2
+  ],
+  "char_ngram_range": [
+    3,
+    5
+  ],
+  "classifier": "LogisticRegression",
+  "class_weight": "balanced",
+  "metrics": {
+    "accuracy": 0.9912917271407837,
+    "precision_sif": 0.9831460674157303,
+    "recall_sif": 1.0,
+    "f1_sif": 0.9915014164305949,
+    "confusion_matrix": [
+      [
+        333,
+        6
+      ],
+      [
+        0,
+        350
+      ]
+    ],
+    "test_samples": 689
+  },
+  "category_distribution": {
+    "Unsafe Act": 1771,
+    "Safe Act": 1672
+  },
+  "risk_level_distribution": {
+    "High": 1751,
+    "Low": 1673,
+    "Medium": 19
+  }
+}

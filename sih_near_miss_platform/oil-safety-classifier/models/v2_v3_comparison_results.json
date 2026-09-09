@@ -1,0 +1,43 @@
+{
+  "dataset": "C:\\Users\\Vinayak Pattar\\OneDrive\\Desktop\\oil-safety-classifier\\data\\raw\\unsafe_act_v3_contrast_balanced.csv",
+  "test_size": 689,
+  "random_state": 42,
+  "V2": {
+    "model": "C:\\Users\\Vinayak Pattar\\OneDrive\\Desktop\\oil-safety-classifier\\models\\unsafe_act_sif_xgboost_v2.pkl",
+    "accuracy": 0.5602322206095791,
+    "precision": 0.5382113821138211,
+    "recall": 0.9457142857142857,
+    "f1": 0.6860103626943005,
+    "false_negatives": 19,
+    "false_positives": 284,
+    "confusion_matrix": [
+      [
+        55,
+        284
+      ],
+      [
+        19,
+        331
+      ]
+    ]
+  },
+  "V3": {
+    "model": "C:\\Users\\Vinayak Pattar\\OneDrive\\Desktop\\oil-safety-classifier\\models\\unsafe_act_sif_v3_model.joblib",
+    "accuracy": 0.9912917271407837,
+    "precision": 0.9831460674157303,
+    "recall": 1.0,
+    "f1": 0.9915014164305949,
+    "false_negatives": 0,
+    "false_positives": 6,
+    "confusion_matrix": [
+      [
+        333,
+        6
+      ],
+      [
+        0,
+        350
+      ]
+    ]
+  }
+}
